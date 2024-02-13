@@ -1,0 +1,42 @@
+from tkinter import *
+
+agenda = []
+
+def salvar():
+    nome = entradaNome.get()
+    numero = entradaNum.get()
+    agenda.append((nome,numero))
+    print(agenda)    
+
+janela = Tk()
+janela.title("Agenda Telefonica")
+janela.configure(background="silver")
+janela.geometry("300x110+550+250")
+
+labelNome = Label(janela,
+                  text="Nome: ",
+                  bg="silver")
+entradaNome = Entry(janela, 
+                    width=35, 
+                    bg="silver")
+
+labelNum = Label(janela,
+                  text="Celular: ",
+                  bg="silver")
+entradaNum = Entry(janela,
+                   width=35,
+                   #fg="red", 
+                   bg="silver")
+
+salvarbtn = Button (janela,
+                    text= "Salvar",
+                    fg="red",
+                    command=salvar)
+
+
+labelNome.grid(column=0,row=1,padx=5,pady=10)
+entradaNome.grid(column=1,row=1,padx=5,pady=10)
+labelNum.grid(column=0,row=2,padx=5,pady=5)
+entradaNum.grid(column=1,row=2,padx=5,pady=5)
+salvarbtn.grid(column=0,row=3,columnspan=3,padx=1,pady=0)
+janela.mainloop()
