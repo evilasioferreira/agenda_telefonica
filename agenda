@@ -5,6 +5,11 @@ agenda = []
 def salvar():
     nome = entradaNome.get()
     numero = entradaNum.get()
+    
+    for entrada in agenda:
+        if entrada[1] == numero:
+            print(f"O número {numero} já está na agenda. Não foi possível adicionar.")
+            return
     agenda.append((nome,numero))
     print(agenda)    
 
